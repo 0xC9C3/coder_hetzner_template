@@ -64,8 +64,8 @@ write_files:
 %{ endif ~}
 runcmd:
   - chown ${username}:${username} /home/${username}
-  - cat /tmp/setup_workspace.sh | base64 -d | > /tmp/setup_workspace.sh
-  - CODER_USERNAME=${username} /tmp/setup_workspace.sh > /var/log/setup_workspace.log 2>&1
+  - cat /tmp/setup_workspace.sh | base64 -d | > /tmp/setup_workspace_decoded.sh
+  - CODER_USERNAME=${username} /tmp/setup_workspace_decoded.sh > /var/log/setup_workspace.log 2>&1
   - systemctl enable coder-agent
   - systemctl start coder-agent
 %{ if code_server_setup ~}

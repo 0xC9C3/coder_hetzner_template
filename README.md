@@ -16,8 +16,6 @@ This is based on https://github.com/ntimo/coder-hetzner-cloud-template
 - install yarn
 - install chezmoi
 
-This could also be automated but since it happens rarely I didn't bother.
-
 ## If you want to use this template
 
 I recommend to fork it and apply your own changes.

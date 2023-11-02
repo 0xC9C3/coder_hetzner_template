@@ -14,11 +14,7 @@ This is based on https://github.com/ntimo/coder-hetzner-cloud-template
 - install rustup
 - install nvm and node lts
 - install yarn
-
-When I create a new workspace I usually do the following:
-
-- upload my .zshrc and .p10k.zsh files
-- upload my gitconfig
+- install chezmoi
 
 This could also be automated but since it happens rarely I didn't bother.
 

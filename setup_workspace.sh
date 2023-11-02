@@ -42,3 +42,8 @@ fi
 if [ ! -d "/home/${CODER_USERNAME}/.cargo" ]; then
   su - "${CODER_USERNAME}" -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
 fi
+
+# install chezmoi
+if [ ! -x "$(command -v chezmoi)" ]; then
+  su - "${CODER_USERNAME}" -c "sh -c \"\$(curl -fsLS get.chezmoi.io)\" -- -b /home/${CODER_USERNAME}/.local/bin"
+fi

@@ -15,10 +15,10 @@ if [ ! -d "/home/${CODER_USERNAME}/.oh-my-zsh" ]; then
   curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o install.sh
   sh install.sh --unattended
   rm install.sh
-  echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' >>! ~/.zshrc
   git clone https://github.com/zsh-users/zsh-autosuggestions /root/.oh-my-zsh/custom/plugins/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/custom/themes/powerlevel10k
+  echo 'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' >>! /root/.zshrc
   rm -rf /home/"${CODER_USERNAME}"/.oh-my-zsh
   cp -R /root/.oh-my-zsh /home/"${CODER_USERNAME}"/.oh-my-zsh
   cp /root/.zshrc /home/"${CODER_USERNAME}"/.zshrc

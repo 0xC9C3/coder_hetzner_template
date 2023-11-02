@@ -20,4 +20,10 @@ When I create a new workspace I usually do the following:
 - upload my .zshrc and .p10k.zsh files
 - upload my gitconfig
 
-This could also be automated but since it happens, so rarely I didn't bother.
+This could also be automated but since it happens rarely I didn't bother.
+
+## If you want to use this template
+
+I recommend to fork it and apply your own changes.
+
+For automated updates inside a coder take a look at .github/workflows/deploy.yml

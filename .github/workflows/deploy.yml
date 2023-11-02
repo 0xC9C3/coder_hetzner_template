@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install coder cli
+        run: curl -fsSL https://coder.com/install.sh | sh
+      - name: login to coder
+        run: |
+          echo ${{ secrets.CODER_PASSWORD }} >> .config/coderv2/session
+          echo ${{ secrets.CODER_URL }} >> .config/coderv2/url
+      - name: template push
+        run: |
+          coder templates push --activate --create -m "${{ github.event.head_commit.message }}" \
+          --yes \
+          --var "hcloud_token=${{ secrets.HCLOUD_TOKEN }}" \
+          ${{ vars.CODER_TEMPLATE }}

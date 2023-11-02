@@ -40,9 +40,9 @@ variable "instance_location" {
 
 variable "instance_type" {
   description = "What instance type should your workspace use?"
-  default     = "ccx33"
+  default     = "cx51"
   validation {
-    condition     = contains(["cx11", "cx21", "cx31", "cx41", "cx51", "ccx33"], var.instance_type)
+    condition     = contains(["cx11", "cx21", "cx31", "cx41", "cx51", "cpx51", "ccx33"], var.instance_type)
     error_message = "Invalid instance type!"
   }
 }
@@ -116,7 +116,7 @@ resource "hcloud_server" "root" {
     init_script            = base64encode(coder_agent.dev.init_script)
     coder_agent_token      = coder_agent.dev.token
     code_server_setup      = var.code_server
-    workspace_setup_script = base64encode(file("${path.module}/workspace-setup.sh"))
+    workspace_setup_script = base64encode(file("${path.module}/setup_workspace.sh"))
   })
 }
 

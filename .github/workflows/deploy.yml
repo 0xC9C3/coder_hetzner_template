@@ -18,7 +18,7 @@ jobs:
           echo "${{ secrets.CODER_URL }}" >> .config/coderv2/url
       - name: template push
         run: |
-          coder templates push --activate --create -m "${{ github.event.head_commit.message }}" \
+          CODER_SESSION_TOKEN=${{ secrets.CODER_PASSWORD }} coder templates push --activate --create -m "${{ github.event.head_commit.message }}" \
           --global-config .config/coderv2 \
           --yes \
           --var "hcloud_token=${{ secrets.HCLOUD_TOKEN }}" \

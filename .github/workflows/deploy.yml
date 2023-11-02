@@ -14,8 +14,8 @@ jobs:
       - name: login to coder
         run: |
           mkdir -p .config/coderv2
-          echo ${{ secrets.CODER_PASSWORD }} >> .config/coderv2/session
-          echo ${{ secrets.CODER_URL }} >> .config/coderv2/url
+          echo "${{ secrets.CODER_PASSWORD }}" >> .config/coderv2/session
+          echo "${{ secrets.CODER_URL }}" >> .config/coderv2/url
       - name: template push
         run: |
           coder templates push --activate --create -m "${{ github.event.head_commit.message }}" \

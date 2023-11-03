@@ -46,5 +46,5 @@ fi
 
 # install chezmoi
 if [ ! -x "$(command -v chezmoi)" ]; then
-  su - "${CODER_USERNAME}" -c "sh -c \"\$(curl -fsLS get.chezmoi.io)\" -- -b /home/${CODER_USERNAME}/.local/bin"
+  snap install chezmoi --classic
 fi

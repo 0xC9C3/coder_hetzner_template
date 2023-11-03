@@ -22,12 +22,11 @@ if [ ! -d "/home/${CODER_USERNAME}/.oh-my-zsh" ]; then
   rm -rf /home/"${CODER_USERNAME}"/.oh-my-zsh
   cp -R /root/.oh-my-zsh /home/"${CODER_USERNAME}"/.oh-my-zsh
   cp /root/.zshrc /home/"${CODER_USERNAME}"/.zshrc
-  chown -R "${CODER_USERNAME}":"${CODER_USERNAME}" /home/"${CODER_USERNAME}"/.oh-my-zsh
-  chown "${CODER_USERNAME}":"${CODER_USERNAME}" /home/"${CODER_USERNAME}"/.zshrc
   chsh -s /usr/bin/zsh root
   chsh -s /usr/bin/zsh "${CODER_USERNAME}"
   sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' /home/"${CODER_USERNAME}"/.zshrc
   sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' /home/"${CODER_USERNAME}"/.zshrc
+  chown "${CODER_USERNAME}":"${CODER_USERNAME}" /home/"${CODER_USERNAME}"
 fi
 
 

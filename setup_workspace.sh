@@ -27,6 +27,8 @@ if [ ! -d "/home/${CODER_USERNAME}/.oh-my-zsh" ]; then
   sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' /home/"${CODER_USERNAME}"/.zshrc
   sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' /home/"${CODER_USERNAME}"/.zshrc
   chown "${CODER_USERNAME}":"${CODER_USERNAME}" /home/"${CODER_USERNAME}"
+  chown -R "${CODER_USERNAME}":"${CODER_USERNAME}" /home/"${CODER_USERNAME}"/.oh-my-zsh
+  chown "${CODER_USERNAME}":"${CODER_USERNAME}" /home/"${CODER_USERNAME}"/.zshrc
 fi
 
 

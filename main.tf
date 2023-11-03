@@ -31,7 +31,7 @@ EOF
 
 variable "instance_location" {
   description = "What region should your workspace live in?"
-  default     = "nbg1"
+  default     = "fsn1"
   validation {
     condition     = contains(["nbg1", "fsn1", "hel1"], var.instance_location)
     error_message = "Invalid zone!"

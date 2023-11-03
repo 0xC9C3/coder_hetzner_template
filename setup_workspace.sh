@@ -33,7 +33,7 @@ fi
 
 # install nvm
 if [ ! -d "/home/${CODER_USERNAME}/.nvm" ]; then
-  su - "${CODER_USERNAME}" -c "sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh)\""
+  su - "${CODER_USERNAME}" -c "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash"
   su - "${CODER_USERNAME}" -c "source .zshrc && nvm install --lts"
   su - "${CODER_USERNAME}" -c "source .zshrc && npm install -g yarn"
 fi

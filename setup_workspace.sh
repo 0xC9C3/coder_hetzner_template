@@ -44,7 +44,8 @@ if [ ! -d "/home/${CODER_USERNAME}/.cargo" ]; then
   su - "${CODER_USERNAME}" -c "curl https://sh.rustup.rs -sSf | sh -s -- -y"
 fi
 
-# install chezmoi
-if [ ! -x "$(command -v chezmoi)" ]; then
-  snap install chezmoi --classic
+# install chezmoi init script
+if [ ! -x "$(command -v dotfiles)" ]; then
+  echo 'sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $1' >> /usr/local/bin/dotfiles
+  chmod +x /usr/local/bin/dotfiles
 fi

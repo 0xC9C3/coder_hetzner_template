@@ -14,7 +14,12 @@ This is based on https://github.com/ntimo/coder-hetzner-cloud-template
 - install rustup
 - install nvm and node lts
 - install yarn
-- install chezmoi
+
+Do this once to initialize your dotfiles using chezmoi
+
+```shell
+dotfiles $GITHUB_USERNAME
+```
 
 ## If you want to use this template
 
